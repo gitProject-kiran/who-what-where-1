@@ -41,7 +41,6 @@ gulpApp.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider) {
                 $yelpData: [ '$stateParams', 'loadData', function ($stateParams, loadData) {
                      $stateParams.term = $stateParams.term === '' ? 'food' : $stateParams.term;
 
-                    /*first time call avoid*/
                     if($stateParams.name){
                         return  loadData.retrieveYelp($stateParams.name,$stateParams.term);
                     }
