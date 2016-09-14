@@ -1,5 +1,6 @@
 function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDialog) {
-
+    $scope.zoom  = $stateParams.zoom;
+    $stateParams.zoom =  $stateParams.zoom == 2 ? 2 : $stateParams.zoom;
     $state.transitionTo('home', $stateParams);
 
     /*take all data in location array*/
@@ -103,6 +104,8 @@ function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDi
             return;
         }
         $stateParams.index++;
+
+        $stateParams.zoom = 14;
 
         $stateParams.name = $scope.cityName;
 

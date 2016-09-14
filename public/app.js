@@ -2,6 +2,7 @@ require('angular');
 require('angular-ui-router');
 require('angular-animate');
 require('angular-aria');
+require('angular-messages');
 require('angular-material');
 require('angular-material-icons');
 _ = require('lodash');
@@ -28,19 +29,22 @@ gulpApp.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider) {
             params:{
                 name:'',
                 term:'',
-                index:''
+                index:'',
+                zoom:2
             },
             resolve: {
               $fourSquareData: [ '$stateParams', 'loadData', function ($stateParams, loadData) {
                   $stateParams.term = $stateParams.term === '' ? 'food' : $stateParams.term;
 
-                 if($stateParams.name){
+                  /*first time call avoid*/
+                  if($stateParams.name){
                       return  loadData.retrieveFourSquare($stateParams.name,$stateParams.term);
                   }
               }],
                 $yelpData: [ '$stateParams', 'loadData', function ($stateParams, loadData) {
                      $stateParams.term = $stateParams.term === '' ? 'food' : $stateParams.term;
 
+                    /*first time call avoid*/
                     if($stateParams.name){
                         return  loadData.retrieveYelp($stateParams.name,$stateParams.term);
                     }
