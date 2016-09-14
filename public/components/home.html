@@ -1,9 +1,9 @@
 <!-- header of app -->
 <md-toolbar style="height:50px;">
     <div class="md-toolbar-tools">
-        <md-button style="padding-top:10px;" show-sm show-md hide-gt-md>
+        <md-button style="padding-top:15px;">
             <md-tooltip>List</md-tooltip>
-            <ng-md-icon icon="menu" style="fill:#ffffff;" size="45"></ng-md-icon>
+            <img src="../assets/images/logo-1.png" width="45px" height="45px"/>
         </md-button>
         <h1 flex style="padding-top:0px;">
             <span show-md show-gt-md hide-sm>Who What Where App</span>
@@ -43,7 +43,7 @@
                         </div>
                     </info-window>
                     <marker ng-repeat="marker in allInfo" position="[{{marker.lat}},{{marker.lon}}]"
-                            title="{{marker.name}}" on-mouseover="showCity(event,$index,'myInfoWindow')">
+                            title="{{marker.name}}" on-mouseover="showCity(event,$index)" on-mouseout="removeMarker()">
                     </marker>
                 </ng-map>
             </md-content>
@@ -59,7 +59,7 @@
                         </div>
                     </info-window>
                     <marker ng-repeat="marker in allInfo" position="[{{marker.lat}},{{marker.lon}}]"
-                            title="{{marker.name}}" on-mouseover="showCity(event,$index,'myInfoWindow')">
+                            title="{{marker.name}}" on-mouseover="showCity(event,$index)">
                     </marker>
                 </ng-map>
             </md-content>

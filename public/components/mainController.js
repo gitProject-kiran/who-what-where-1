@@ -93,8 +93,12 @@ function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDi
 
         $scope.rating = $scope.locationData[index].rating;
 
-        $scope.map.showInfoWindow(mapId, this);
+        $scope.map.showInfoWindow('myInfoWindow', this);
 
+    };
+
+    $scope.removeMarker = function () {
+        $scope.map.hideInfoWindow('myInfoWindow', this);
     };
 
     $scope.submit = function () {
