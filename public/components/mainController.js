@@ -85,15 +85,15 @@ function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDi
     //get only 25 data from list
     $scope.allInfo = _.take(uniqueData, 25);
 
-    $scope.showCity = function (event, index) {
+    $scope.showCity = function (event, index, mapId) {
         $scope.address = $scope.locationData[index].address;
 
         $scope.name = $scope.locationData[index].name;
 
         $scope.rating = $scope.locationData[index].rating;
 
-        $scope.map.showInfoWindow('myInfoWindow', this);
-        $scope.map.showInfoWindow('myInfoWindowMobile', this);
+        $scope.map.showInfoWindow(mapId, this);
+
     };
 
     $scope.submit = function () {

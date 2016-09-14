@@ -100,7 +100,6 @@ function loadData($http, $q) {
                     });
                 return defered.promise;
             } else {
-                console.log('yelp data not found');
                 return 0;
             }
         },
