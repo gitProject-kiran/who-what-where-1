@@ -34,8 +34,7 @@ gulpApp.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider) {
               $fourSquareData: [ '$stateParams', 'loadData', function ($stateParams, loadData) {
                   $stateParams.term = $stateParams.term === '' ? 'food' : $stateParams.term;
 
-                  /*first time call avoid*/
-                  if($stateParams.name){
+                 if($stateParams.name){
                       return  loadData.retrieveFourSquare($stateParams.name,$stateParams.term);
                   }
               }],
