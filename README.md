@@ -4,7 +4,7 @@ Requirement :
              Nodejs and NPM install globally
 			 
 Project run :		
-			Run npm install 
+			
 			Install gulp globally npm install gulp -g 
 			Run gulp 
 
