@@ -86,7 +86,7 @@ function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDi
     //get only 25 data from list
     $scope.allInfo = _.take(uniqueData, 25);
 
-    $scope.showCity = function (event, index, mapId) {
+    $scope.showCity = function (event, index) {
         $scope.address = $scope.locationData[index].address;
 
         $scope.name = $scope.locationData[index].name;
@@ -104,7 +104,7 @@ function mainCtr($scope, $yelpData, $fourSquareData, $stateParams, $state, $mdDi
     $scope.submit = function () {
 
         /*validation of city data is empty or not*/
-        if(_.isUndefined($scope.cityName)){
+        if(_.isUndefined($scope.cityName) || _.isUndefined($scope.type)){
             return;
         }
         $stateParams.index++;

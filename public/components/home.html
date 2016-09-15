@@ -32,9 +32,9 @@
 <!--Map and content display in map-->
 <div layout="column" style="overflow:hidden;">
     <div flex>
-        <md-content class="blue-green" hide-sm show-md show-gt-md  style="overflow: auto;">
+        <md-content class="blue-green" hide-sm hide-md hide-lg show-gt-lg  style="overflow: auto;">
             <md-content map-lazy-load="https://maps.google.com/maps/api/js">
-                <ng-map flex style="height:550px;" center="{{allInfo[0].lat}}, {{allInfo[0].lon}}" zoom="{{zoom}}">
+                <ng-map flex style="height:350px;" center="{{allInfo[0].lat}}, {{allInfo[0].lon}}" zoom="{{zoom}}">
                     <info-window id="{{'myInfoWindow'}}">
                         <div>
                             <pre> {{name}} </pre>
@@ -48,7 +48,7 @@
                 </ng-map>
             </md-content>
         </md-content>
-        <md-content id="content" class="blue-green" show-sm hide-md hide-gt-md style="overflow: auto;">
+        <md-content id="content" class="blue-green" show-sm show-md show-lg hide-gt-lg style="overflow: auto;">
             <md-content map-lazy-load="https://maps.google.com/maps/api/js">
                 <ng-map flex style="height:250px;" center="{{allInfo[0].lat}}, {{allInfo[0].lon}}" zoom="{{zoom}}">
                     <info-window id="myInfoWindow">
@@ -65,18 +65,32 @@
             </md-content>
         </md-content>
     </div>
-    <div flex style="overflow:auto;height:350px;">
+   <!-- <div flex style="overflow:auto;height:350px;">
         <md-list class="fixedRows">
             <md-subheader class="md-no-sticky">List Of Term</md-subheader>
             <md-list-item class="md-2-line contact-item selected" ng-repeat="data in allInfo">
                 <img ng-src="{{data.image_url}}" class="md-avatar" alt="{{data.name}}"/>
                 <div class="md-list-item-text compact">
-                    <h3 ng-click="showCustom($index)">{{data.name}}</h3>
+                    <h3 ng-click="showCustom($index)" style="cursor: pointer;">{{data.name}}</h3>
                     <p>{{data.address}}</p>
                     <p>{{data.display_phone}}</p>
                 </div>
             </md-list-item>
         </md-list>
+    </div>-->
+    <md-subheader style="height: 2px;"></md-subheader>
+    <div flex style="overflow:auto;height:300px;">
+    <md-grid-list md-cols-gt-lg="3" md-cols-lg="2" md-cols-md="1" md-cols-sm="1" md-gutter="5px" md-row-height-md="4:1"
+                  md-row-height-sm="4:1.5" md-row-height-gt-md="4:1.5" >
+        <md-grid-tile ng-repeat="data in allInfo" class="menu-back">
+            <img ng-src="{{data.image_url}}" alt="{{data.name}}" style="border-radius: 50px"/>
+            <div class="md-list-item-text compact">
+                <h3 ng-click="showCustom($index)" style="cursor: pointer;">{{data.name}}</h3>
+                <p>{{data.address}}</p>
+                <p>{{data.display_phone}}</p>
+            </div>
+        </md-grid-tile>
+    </md-grid-list>
     </div>
 
 </div>
