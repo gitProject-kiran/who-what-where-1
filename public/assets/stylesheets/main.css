@@ -25,6 +25,10 @@ img {
     background: darkgray;
 }
 
+md-grid-list md-grid-tile figure {
+    justify-content: flex-start;
+}
+
 @media only screen
 and (max-width: 736px) {
     .mobile {
