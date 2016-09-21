@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint');
 
 gulp.task('copy', function() {
-    gulp.src(['./public/*.html','./public/**/*.css'])
+    gulp.src(['./public/*.html','./public/**/*.css','./public/**/*.png'])
         .pipe(gulp.dest('./build'))
         .pipe(browserSync.stream());
 });
