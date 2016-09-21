@@ -9,6 +9,8 @@
             <span show-md show-gt-md hide-sm>Who What Where App</span>
             <span hide-gt-sm show-sm>W3App</span>
         </h1>
+        <form>
+        <div layout="row">
         <md-input-container md-no-float class="md-accent" style="padding-bottom:0px;padding-top:5px;margin-left:25px"
                             show-gt-md hide-sm hide-md>
             <input ng-model="cityName" placeholder="Search city here"
@@ -19,13 +21,14 @@
             <input ng-model="type" placeholder="Search term here" style="color:wheat;padding-left:25px;margin-left:5px">
         </md-input-container>
         <md-button style="background-color:grey;border-radius:20px;margin-top:5px;" show-gt-md hide-sm hide-md
-                   ng-click="submit()">
-            <label>Submit</label>
+                   ng-click="submit()">Submit
         </md-button>
         <md-button show-sm show-md hide-gt-md style="padding-top:15px;" ng-click="showDefaultAndMobile()">
             <md-tooltip> Search</md-tooltip>
             <ng-md-icon icon="search" style="fill:#ffffff;" size="45"></ng-md-icon>
         </md-button>
+         </div>
+        </form>
     </div>
 </md-toolbar>
 
