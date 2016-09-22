@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "browserify ./public/app.js -o ./build/js/app.js",
-    "watch": "watchify ./public/app.js -o ./build/js/app.js"
+    "build": "browserify ./public/app.js -o ./build/app.js",
+    "watch": "watchify ./public/app.js -o ./build/app.js"
   },
   "author": "kiran shinde",
   "license": "ISC",
